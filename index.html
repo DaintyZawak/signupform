@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group4WTF Form</title>
+    <link rel="stylesheet" href="./group4task copy.css" />
+  </head>
+
+  <body>
+    <main>
+      <form>
+        <div class="formElements">
+          <div class="formWrapper">
+            <div class="labelElements">
+              <div class="edgeDecoration1">
+                <img src="./assets/Group 21.svg" />
+              </div>
+              <h1>Sign Up</h1>
+              <p class="h1P">Get started absolutely free!</p>
+
+              <label for="fullName"
+                >Full name
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Ex. Jane Doe"
+                  required
+              /></label>
+              <label for="emailAddress"
+                >Email
+
+                <input
+                  type="email"
+                  id="emailAddress"
+                  placeholder="Email Address"
+                  required
+              /></label>
+
+              <label for="phoneNumber"
+                >Phone number
+
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  placeholder="Phone number"
+                  required
+              /></label>
+              <label for="age"
+                >Age
+
+                <input
+                  type="number"
+                  id="age"
+                  min="16"
+                  max="65"
+                  placeholder="Age"
+                  required
+              /></label>
+              <label for="country"
+                >Country
+
+                <select
+                  type="text"
+                  id="country"
+                  placeholder="select region"
+                  required
+                >
+                  <option value="0">select region</option>
+                  <optgroup label="Africa">
+                    <option value="1">Nigeria</option>
+                    <option value="2">Ghana</option>
+                    <option value="3">Egypt</option>
+                    <option value="4">South Africa</option>
+                    <option value="other">Other</option>
+                  </optgroup>
+                  <optgroup label="North America">
+                    <option value="5">United States</option>
+                    <option value="6">Canada</option>
+                    <option value="7">Other</option>
+                  </optgroup>
+                  <optgroup label="Asia">
+                    <option value="8">China</option>
+                    <option value="9">India</option>
+                    <option value="other">Other</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label for="password"
+                >Password
+
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+              /></label>
+              <label for="confirmPassword"
+                >Confirm Password
+
+                <input
+                  type="confirmPassword"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+              /></label>
+
+              <label for="termsAndConditons"
+                ><input
+                  class="radio"
+                  type="radio"
+                  id="termsAndConditons"
+                  required
+                />
+                Agree to our
+                <a href="">terms and conditions and privacy policy</a></label
+              >
+
+              <div class="signUpButton">
+                <button id="signUpButton">Sign up</button>
+              </div>
+              <p class="login">Already a member? <a href="">Login</a></p>
+              <div class="edgeDecoration2">
+                <img src="./assets/Group 21.svg" />
+              </div>
+            </div>
+
+            <section class="signUpOptions">
+              <button id="openModalButton">
+                <div class="page2Buttons">
+                  <img src="./assets/Linkedin.svg" alt="" />
+                  <p>Sign up with LinkedIn</p>
+                </div>
+              </button>
+              <button>
+                <div class="page2Buttons">
+                  <img src="./assets/twitter (1) 1.svg" alt="" />
+                  <p>Sign up with Twitter</p>
+                </div>
+              </button>
+              <button>
+                <div class="page2Buttons">
+                  <img src="./assets/Facebook.svg" alt="" />
+                  <p>Sign up with Facebook</p>
+                </div>
+              </button>
+            </section>
+          </div>
+        </div>
+        <div id="modal" class="modal">
+          <div id="modalContent" class="modalContent">
+            <div class="cancelIcon">
+              <img id="cancelIcon" src="./assets/Vector (1).svg" alt="" />
+            </div>
+            <h2>Provide your LinkedIn login details</h2>
+            <button class="popUpButton">Sign up with LinkedIn</button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      const button = document.querySelector("#openModalButton");
+      const modal = document.getElementById("modal");
+      const modalContent = document.getElementById("modalContent");
+      const cancelIcon = document.getElementById("cancelIcon");
+
+      const openModal = () => {
+        modal.style.display = "flex";
+      };
+
+      const closeModal = () => {
+        modal.style.display = "none";
+      };
+
+      const btnClickEventHandler = () => {
+        openModal();
+      };
+
+      modalContent.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      cancelIcon.addEventListener("click", closeModal);
+
+      button.addEventListener("click", btnClickEventHandler);
+      modal.addEventListener("click", closeModal);
+    </script>
+  </body>
+</html>
